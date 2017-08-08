@@ -22,6 +22,7 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+    @scooter = Scooter.find(params[:scooter_id])
   end
 
 end
