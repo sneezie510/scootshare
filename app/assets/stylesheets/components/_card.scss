@@ -1,3 +1,4 @@
+
 .card {
   height: 400px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -45,4 +46,20 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+.card-container {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+}
+
+.scooter-image {
+  height: 200px;
+  width: 200px;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.card-content {
+margin: 10px;
 }
