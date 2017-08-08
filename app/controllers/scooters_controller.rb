@@ -14,17 +14,18 @@ class ScootersController < ApplicationController
     end
   end
 
-  def new
-    @scooter = Scooter.new(scooter_params)
-  end
+    def new
+      @scooter = Scooter.new(scooter_params)
+    end
 
-  def show
-    @scooter = Scooter.find(params[:id])
-  end
+    def show
+      @scooter = Scooter.find(params[:id])
+    end
 
-  private
+    private
 
-  def scooter_params
-    params.require(:scooter).permit(:make, :model, :location, :availability, :picture, :user_id, :price)
+    def scooter_params
+      params.require(:scooter).permit(:make, :model, :location, :availability, :picture, :user_id, :price)
+    end
   end
 end
