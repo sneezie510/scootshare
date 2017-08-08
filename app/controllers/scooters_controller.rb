@@ -12,6 +12,7 @@ class ScootersController < ApplicationController
     else
       render :new
     end
+  end
 
     def new
       @scooter = Scooter.new(scooter_params)
