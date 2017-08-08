@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170808083527) do
+ActiveRecord::Schema.define(version: 20170808084744) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "reservations", force: :cascade do |t|
+    t.date     "start_date"
+    t.date     "end_date"
+    t.string   "status"
+    t.integer  "total_price"
+    t.integer  "user_id"
+    t.integer  "scooter_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["scooter_id"], name: "index_reservations_on_scooter_id", using: :btree
+    t.index ["user_id"], name: "index_reservations_on_user_id", using: :btree
+  end
 
   create_table "scooters", force: :cascade do |t|
     t.string   "make"
@@ -41,9 +54,15 @@ ActiveRecord::Schema.define(version: 20170808083527) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "address"
+    t.string   "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "reservations", "scooters"
+  add_foreign_key "reservations", "users"
   add_foreign_key "scooters", "users"
 end
