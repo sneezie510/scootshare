@@ -1,7 +1,9 @@
 class TripsController < ApplicationController
   def index
+    @trips = current_user.reservations
   end
 
-  def cancel
-  end
+  # def cancel
+  #   @trip.status = "cancelled"
+  # end
 end
