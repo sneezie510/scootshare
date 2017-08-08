@@ -11,6 +11,7 @@ class ScootersController < ApplicationController
       redirect_to account_path
     else
       render :new
+    end
   end
 
   def new
@@ -26,7 +27,4 @@ class ScootersController < ApplicationController
   def scooter_params
     params.require(:scooter).permit(:make, :model, :location, :availability, :picture, :user_id, :price)
   end
-
-
-
 end
