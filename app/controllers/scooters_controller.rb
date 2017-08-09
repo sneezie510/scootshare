@@ -28,4 +28,3 @@ class ScootersController < ApplicationController
       params.require(:scooter).permit(:make, :model, :location, :availability, :picture, :user_id, :price)
     end
   end
-end
