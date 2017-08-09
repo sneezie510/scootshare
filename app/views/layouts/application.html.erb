@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <%= favicon_link_tag 'motorbike1.png' %>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>TODO</title>
+  <title>Scootshare - Peer-to-peer car sharing</title>
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -11,8 +12,6 @@
 <body>
   <%= render 'shared/flashes' %>
   <%= render 'shared/navbar' %>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
   <%= yield %>
   <%= render 'shared/footer' %>
   <%= javascript_include_tag 'application' %>

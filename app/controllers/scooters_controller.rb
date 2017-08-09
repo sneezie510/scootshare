@@ -1,6 +1,7 @@
 class ScootersController < ApplicationController
   def index
     @scooters = Scooter.all
+    session[:date_data] = params if params[:start_date]
   end
 
   def create
@@ -20,6 +21,12 @@ class ScootersController < ApplicationController
 
     def show
       @scooter = Scooter.find(params[:id])
+      if data = session[:date_data]
+        @start_date = Date.parse(data["start_date"])
+        @end_date = Date.parse(data["end_date"])
+        @total_price = ((@end_date - @start_date).to_i + 1) * @scooter.price
+      end
+      @reservation = Reservation.new
     end
 
     private
