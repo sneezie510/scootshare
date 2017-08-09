@@ -10,23 +10,23 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "How it works", "pages_tour_path", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Search", "root_path", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Scooters", "scooter_reservatons_path", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "How it works", "pages/tour", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Search", "/", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Trips", "trips", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Scooters", "reservations", class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "https://avatars0.githubusercontent.com/u/26726874?v=3", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
-              <%= link_to "#" do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Profile") %>
+              <%= link_to "account" do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Account") %>
               <% end %>
             </li>
             <li>
-              <%= link_to "#" do %>
+              <%= link_to "/" do %>
                 <i class="fa fa-home"></i>  <%= t(".profile", default: "Home") %>
               <% end %>
             </li>
