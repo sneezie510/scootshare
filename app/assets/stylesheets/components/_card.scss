@@ -1,12 +1,26 @@
 
 .card {
   height: 400px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  text-shadow: 0 0px 50px rgba(0,0,0,0.6);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
   color: white;
   position: relative;
 }
+.card-reservation {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: left;
+  text-align: center;
+  padding: 0 16px;
+  color: #88C5CC;
+}
+
+.card-content-reservation {
+  color: grey;
+
+}
+
 .card-user {
   position: absolute;
   right: 10px;

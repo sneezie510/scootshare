@@ -8,7 +8,7 @@
     <div><%= s.model %></div>
     <div><%= s.location %></div>
     <div><%= s.price %></div>
-    <div><%= link_to "Show this scooter", scooter_path(s) %></div>
+    <div><%= link_to "Show this scooter", scooter_path(s), data: params %></div>
   </div>
 </div>
 <% end %>
