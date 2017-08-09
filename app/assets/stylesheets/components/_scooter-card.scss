@@ -1,0 +1,43 @@
+
+.scooter-image {
+  height: 200px;
+  width: 200px;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.scooter-card {
+  display: flex;
+  margin: 20px;
+  align-items: center;
+  background-color: white;
+}
+
+.scooter-card-content {
+  margin: 10px;
+  width: calc(100% - 200px);
+}
+
+.scooter-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.scooter-btn {
+  color: white;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border-radius: 2px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #88C5CC;
+  letter-spacing: 1px;
+  -webkit-transition: all .15s ease;
+  transition: all .15s ease;
+  &:hover {
+    text-decoration: none;
+    color: #BE3E31;
+    cursor: pointer;
+  }
+}
