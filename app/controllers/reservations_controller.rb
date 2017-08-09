@@ -4,12 +4,12 @@ class ReservationsController < ApplicationController
     @reservations = Reservation.all
   end
 
-  def approve
-  end
+  # def approve
+  # end
 
-  def deny
+  # def deny
 
-  end
+  # end
 
   def create
     # reservation = Reservation.create()
@@ -22,7 +22,6 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
-    @scooter = Scooter.find(params[:scooter_id])
   end
 
 end
