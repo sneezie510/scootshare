@@ -1,14 +1,40 @@
 <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/159190/vespa-roller-motor-scooter-cult-159190.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');">
 
-  <div class="card-category">Popular</div>
+  <div class="card-category">€ <%= @scooter.price %> per day</div>
   <div class="card-description">
     <h2><%= @scooter.make %></h2>
-    <%= @scooter.model %>
-    <%= @scooter.location %>
-    <%= @scooter.price %>
-    <%= @scooter.picture %>
-    <p>Very cool city, the best</p>
+    <p><%= @scooter.model %></p>
+    <p><%= @scooter.location %></p>
+    <p>Why bike and drip when you can scoot and fly!</p>
   </div>
   <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
   <a class="card-link" href="#" ></a>
 </div>
+
+<div class="card-reservation">
+  <div class="col s12 m7">
+    <h2 class="header">Trip Summary</h2>
+    <div class="card horizontal">
+      <div class="card-stacked">
+        <div class="card-content-reservation">
+          <%= simple_form_for([@scooter, @reservation]) do |f| %>
+          <%= f.input :start_date, :as => :date, :default => @start_date  %>
+          <%= f.input :end_date, :as => :date, :default => @end_date  %>
+          <div><strong><p>Total Trip Price: € <%= @total_price %></p></strong></div>
+          <%= f.button :submit, class: "btn btn-danger" %>
+          <% end %>
+        </div>
+        <div class="card-action">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<center><div><ul>Coming Soon:</ul>
+  <li>scooter description</li>
+  <li>owner info</li>
+  <li>scooter location (geocode)</li>
+</div></center>
+
+
