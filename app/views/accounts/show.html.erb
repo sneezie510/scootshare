@@ -8,7 +8,7 @@
 
     <div class="panel panel-info">
       <div class="panel-heading">
-        <h3 class="panel-title"><%= @first_name %><%= @last_name %> </h3>
+        <h3 class="panel-title"><%= @account.first_name %><%= @account.last_name %> </h3>
       </div>
       <div class="panel-body">
         <div class="row">
@@ -20,21 +20,21 @@
               <tbody>
                 <tr>
                   <td>First Name:</td>
-                  <td><%= :first_name %></td>
+                  <td><%= @account.first_name %></td>
                 </tr>
                 <tr>
                   <td>Last Name:</td>
-                  <td><%= :last_name %></td>
+                  <td><%= @account.last_name %></td>
                 </tr>
                 <tr>
                   <td>Email:</td>
-                  <td><%= :email %></td>
+                  <td><%= @account.email %></td>
                 </tr>
 
                 <tr>
                  <tr>
                   <td>Address:</td>
-                  <td><%= :address %></td>
+                  <td><%= @account.address %></td>
                 </tr>
               </tbody>
             </table>
@@ -47,7 +47,7 @@
       <div class="panel-footer">
         <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
         <span class="pull-right">
-          <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+          <a href="<%= edit_account_path %>" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
           <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
         </span>
       </div>

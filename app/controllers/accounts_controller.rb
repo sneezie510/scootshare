@@ -1,8 +1,10 @@
 class AccountsController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
+
+  def show
+  end
 
   def edit
-    @account = current_user
-    @account = Account.find(params[:id])
   end
 
   def update
@@ -17,9 +19,12 @@ class AccountsController < ApplicationController
   private
 
   def account_params
-    params.require(:account).permit(:first_name, :last_name, :address, :email)
+    params.require(:user).permit(:first_name, :last_name, :address, :email)
   end
 
+  def set_user
+    @account = current_user
+  end
 end
 
 
