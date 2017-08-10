@@ -11,13 +11,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :scooters, only: [:index, :new, :create, :show] do
+  resources :scooters, only: [:index, :new, :create, :show, :edit, :update] do
     resources :reservations, only: [:new, :create]
   end
   resources :reservations, only: [:index] do
     member do
-        patch :approve
-        patch :deny
+      patch :approve
+      patch :deny
     end
   end
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -12,7 +12,7 @@
       </div>
       <div class="panel-body">
         <div class="row">
-        <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://avatars0.githubusercontent.com/u/26726874?v=3" class="img-circle img-responsive"> </div>
+          <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://avatars0.githubusercontent.com/u/26726874?v=3" class="img-circle img-responsive"> </div>
 
 
           <div class=" col-md-9 col-lg-9 ">
@@ -24,22 +24,21 @@
                 </tr>
                 <tr>
                   <td>Last Name:</td>
-                  <td><%= :last_name %></td>
+                  <td><%= @account.last_name %></td>
                 </tr>
                 <tr>
                   <td>Email:</td>
-                  <td><%= :email %></td>
+                  <td><%= @account.email %></td>
                 </tr>
 
                 <tr>
                  <tr>
                   <td>Address:</td>
-                  <td><%= :address %></td>
+                  <td><%= @account.address %></td>
                 </tr>
               </tbody>
             </table>
-            <div><center>My Pending Reservations??</center></div>
-            <a href="#" class="btn btn-primary">Edit My Scooter</a>
+            <a href=<%= new_scooter_path %> class="btn btn-primary">Add a scooter</a>
             <a href="#" class="btn btn-primary">My Reservations</a>
           </div>
         </div>
@@ -47,7 +46,7 @@
       <div class="panel-footer">
         <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
         <span class="pull-right">
-          <a href="edit.html" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+          <a href="<%= edit_account_path %>" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
           <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
         </span>
       </div>
@@ -55,4 +54,28 @@
     </div>
   </div>
 </div>
+<h1 class="search-results-title">My scooters</h1>
+
+<div class="container">
+  <div class="row">
+    <% @scooters.each do |s| %>
+    <div class="col-xs-6">
+      <div class="scooter-card">
+        <div class="scooter-image" style="background-image: url('<%= cl_image_path s.photo %>')"></div>
+        <div class="scooter-card-content">
+          <div><h4><%= s.make %> <%= s.model %></h4></div>
+          <div><h5><i class="fa fa-globe" aria-hidden="true"></i> <%= s.location %></h5></div>
+          <div><h5><i class="fa fa-dollar" aria-hidden="true"></i> <%= s.price %>/day</h5></div>
+          <div><h5>Availability: <%= s.availability %></h5></div>
+          <span class="pull-right">
+            <a href="<%= edit_scooter_path(s) %>" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i></a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
+</div>
+
+

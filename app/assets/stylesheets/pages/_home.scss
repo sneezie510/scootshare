@@ -1,1 +1,49 @@
 // Specific CSS for your home-page
+.page-section {
+  text-align: center;
+  color: #444444;
+}
+.lead {
+  font-size: 24px;
+  color: #888;
+}
+.snippet {
+  padding: 0 0 10px 0;
+  font-size: 14px;
+}
+.benefits {
+  color: #888;
+}
+.billboard-how-it-works {
+  background-image: url('pexels-photo-phone.jpeg');
+  background-position: center;
+  background-size: cover;
+}
+.billboard {
+  height: 260px;
+  margin-bottom: 20px;
+}
+.billboard-wrapper {
+  transition: padding-top 500ms;
+}
+.billboard-how-it-works .steps {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 26px;
+  line-height: 1.2em;
+  padding: 10px;
+}
+.billboard-how-it-works .steps .step {
+  text-align: left;
+  line-height: 1em;
+  text-align: center;
+  font-size: 20px;
+  font-weight: lighter;
+  padding: 10px;
+}
+.title-tour {
+  font-weight: 300;
+  color: white;
+  margin-bottom: 15px;
+  padding-top: 20px;
+}
