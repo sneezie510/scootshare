@@ -1,0 +1,27 @@
+<h1 class="search-results-title">Your Trips</h1>
+
+<div class="container">
+  <div class="row">
+    <% @trips.each do |trip| %>
+    <% owner = trip.scooter.user %>
+    <div class="col-xs-6">
+      <div class="reservation-card">
+        <div class="reservation-image" style="background-image: url('<%= trip.scooter.picture %>')"></div>
+        <div class="reservation-card-content">
+          <div><h5><%= trip.scooter.make %> <%= trip.scooter.model %></h5></div>
+          <div><h6><i class="fa fa-globe" aria-hidden="true"></i> <%= trip.scooter.location %></h6></div>
+          <div><i class="fa fa-dollar" aria-hidden="true"></i> <%= trip.scooter.price %>/day</div>
+          <div><h6>Owned by: <%= owner.first_name.capitalize %> <%= owner.last_name.capitalize %></h6></div>
+          <div><h6>Trip start: <%= trip.start_date %></h6></div>
+          <div><h6>Trip end: <%= trip.end_date %></h6></div>
+          <div><h6>Total: € <%= trip.total_price %></h6></div>
+          <div><h6>Status: <%= trip.status %></h6></div>
+          <div class="reservation-btn-container">
+            <%= link_to "cancel", cancel_trip_path(trip), method: :patch, class: "btn btn-warning" %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

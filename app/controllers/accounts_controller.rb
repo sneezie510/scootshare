@@ -1,8 +1,11 @@
 class AccountsController < ApplicationController
 
+  def show
+    @account = current_user
+  end
+
   def edit
     @account = current_user
-    @account = Account.find(params[:id])
   end
 
   def update
