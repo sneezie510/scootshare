@@ -5,10 +5,6 @@ class AccountsController < ApplicationController
     @scooters = current_user.scooters
   end
 
-  def show
-    @account = current_user
-  end
-
   def edit
     @account = current_user
   end
