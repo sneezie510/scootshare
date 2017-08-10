@@ -1,21 +1,40 @@
 <h1 class="search-results-title">All Scooters</h1>
+<div id="map" style="width: 100%; height: 600px;"></div>
+
+<% content_for(:after_js) do %>
+<%= javascript_tag do %>
+$(document).ready(function() {
+var handler = Gmaps.build('Google');
+handler.buildMap({ internal: { id: 'map' } }, function() {
+markers = handler.addMarkers(<%= raw @hash.to_json %>);
+handler.bounds.extendWith(markers);
+handler.fitMapToBounds();
+if (markers.length == 0) {
+handler.getMap().setZoom(2);
+} else if (markers.length == 1) {
+handler.getMap().setZoom(14);
+}
+});
+});
+<% end %>
+<% end %>
 
 <div class="container">
   <div class="row">
     <% @scooters.each do |s| %>
-      <div class="col-xs-6">
-        <div class="scooter-card">
-          <div class="scooter-image" style="background-image: url('<%= s.picture %>')"></div>
-          <div class="scooter-card-content">
-            <div><h4><%= s.make %> <%= s.model %></h4></div>
-            <div><h5><i class="fa fa-globe" aria-hidden="true"></i> <%= s.location %></h5></div>
-            <div><i class="fa fa-dollar" aria-hidden="true"></i> <%= s.price %>/day</div>
-            <div class="scooter-btn-container">
-              <%= link_to "Scoot!", scooter_path(s), class: "scooter-btn"%>
-            </div>
+    <div class="col-xs-6">
+      <div class="scooter-card">
+        <div class="scooter-image" style="background-image: url('<%= s.picture %>')"></div>
+        <div class="scooter-card-content">
+          <div><h4><%= s.make %> <%= s.model %></h4></div>
+          <div><h5><i class="fa fa-globe" aria-hidden="true"></i> <%= s.location %></h5></div>
+          <div><i class="fa fa-dollar" aria-hidden="true"></i> <%= s.price %>/day</div>
+          <div class="scooter-btn-container">
+            <%= link_to "Scoot!", scooter_path(s), class: "scooter-btn"%>
           </div>
         </div>
       </div>
+    </div>
     <% end %>
   </div>
 </div>

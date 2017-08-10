@@ -1,0 +1,11 @@
+<div class="scooter-card">
+        <div class="scooter-image" style="background-image: url('<%= scooter.picture %>')"></div>
+        <div class="scooter-card-content">
+          <div><h4><%= scooter.make %> <%= scooter.model %></h4></div>
+          <div><h5><i class="fa fa-globe" aria-hidden="true"></i> <%= scooter.location %></h5></div>
+          <div><i class="fa fa-dollar" aria-hidden="true"></i> <%= scooter.price %>/day</div>
+          <div class="scooter-btn-container">
+            <%= link_to "Scoot!", scooter_path(scooter), class: "scooter-btn"%>
+          </div>
+        </div>
+      </div>
