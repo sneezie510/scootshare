@@ -2,7 +2,6 @@ class AccountsController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
   def show
-    @scooters = current_user.scooters
   end
 
   def show
