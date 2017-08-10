@@ -4,7 +4,12 @@ class AccountsController < ApplicationController
   def show
   end
 
+  def show
+    @account = current_user
+  end
+
   def edit
+    @account = current_user
   end
 
   def update

@@ -1,15 +1,34 @@
 class ReservationsController < ApplicationController
 
   def index
-    @reservations = Reservation.all
+    @owner = current_user
+    @reservations = @owner.scooters.map{|scooter|scooter.reservations}.flatten
+
   end
 
-  # def approve
-  # end
+  def approve
+    @reservation = Reservation.find(params[:id])
+    if current_user == @reservation.scooter.user
+      @reservation.status = "approved"
+      @reservation.save
+      flash[:notice] = "Reservation has been approved."
+    else
+      flash[:alert] = "Status cannot be changed by this user."
+    end
+    redirect_to reservations_path
+  end
 
-  # def deny
-
-  # end
+  def deny
+    @reservation = Reservation.find(params[:id])
+    if current_user == @reservation.scooter.user
+      @reservation.status = "denied"
+      @reservation.save
+      flash[:notice] = "Reservation has been denied."
+    else
+      flash[:alert] = "Status cannot be changed by this user."
+    end
+    redirect_to reservations_path
+  end
 
   def create
     @reservation = Reservation.new(reservation_params)
