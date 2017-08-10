@@ -19,14 +19,14 @@ end
 scooter_pics = ['http://i32.photobucket.com/albums/d7/idahosam/Sears_Allstate_Vespa_1966_654321.jpg', 'https://s-media-cache-ak0.pinimg.com/originals/89/19/01/89190169e1bd8437f74c69b7498409e7.jpg', 'https://s-media-cache-ak0.pinimg.com/736x/f5/d7/40/f5d7403e31ea78d013ca4ad04bc6d7fe.jpg', 'https://s-media-cache-ak0.pinimg.com/originals/3f/e9/7e/3fe97e0997b7c59ba6bd9158cf284ed4.jpg', 'http://i.dailymail.co.uk/i/pix/2011/08/04/article-2022383-0D4B716F00000578-875_634x400.jpg', 'https://images.pexels.com/photos/159210/vespa-roller-motor-scooter-cult-159210.jpeg', 'https://images.pexels.com/photos/159192/vespa-roller-motor-scooter-cult-159192.jpeg', 'https://images.pexels.com/photos/221299/pexels-photo-221299.jpeg', 'https://images.pexels.com/photos/205912/pexels-photo-205912.jpeg', 'https://lovedubs.files.wordpress.com/2007/09/m1400.jpg?w=450']
 scooter_makes = ['Honda', 'Vespa', 'Yamaha', 'BMW', 'Genuine', 'Evolve', 'Boxx', 'California', 'Piaggio', 'Kawasaki' ]
 scooter_model = ['Batscoot', 'Urban Panther', 'Hobbit Slayer', 'Night Hawk', 'Urban Explorer 2.0', 'Classic line', 'NF 600', 'A2-300', 'Scooteroo', 'Brokeback Scoot']
-
+scooter_location = ['Nieuwmarkt 15, 1011 JR Amsterdam', 'Gravenstraat 2, 1012 NM Amsterdam', 'Paleisstraat 16, 1012 RB Amsterdam', 'Reguliersdwarsstraat 87, 1017 BK Amsterdam', 'Nieuwe Achtergracht 170, 1018 WV Amsterdam', 'Bellamyplein 51, 1053 AT Amsterdam', 'Saenredamstraat 32, 1072 CH Amsterdam', 'Derde Goudsbloemdwarsstraat 2, 1015 KA Amsterdam', 'Prins Hendrikkade 121, 1011 AM Amsterdam', 'Leidsegracht 84, 1016 CR Amsterdam']
 
 10.times do
   scooter_attributes = {
     picture: scooter_pics.pop,
     make: scooter_makes.pop,
     model: scooter_model.pop,
-    location: "Amsterdam, Centrum",
+    location: scooter_location.pop,
     price: rand(15..40),
     availability: true,
     user: User.all.sample,

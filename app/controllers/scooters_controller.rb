@@ -1,7 +1,12 @@
 class ScootersController < ApplicationController
   def index
-    @scooters = Scooter.all
+    @scooters = Scooter.where.not(latitude: nil, longitude: nil)
     session[:date_data] = params if params[:start_date]
+    @hash = Gmaps4rails.build_markers(@scooters) do |scooter, marker|
+      marker.lat scooter.latitude
+      marker.lng scooter.longitude
+      marker.infowindow render_to_string(partial: "/shared/map_box", locals: { scooter: scooter })
+    end
   end
 
   def create
