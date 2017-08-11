@@ -1,4 +1,49 @@
+.card-reservation {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 16px;
+  color: #88C5CC;
+  background-color: rgba(255, 255, 255, 0.9);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
 
+  h3 {
+    margin-top: 0;
+  }
+}
+
+.card-reservation-container {
+  position: absolute;
+  bottom: -100px;
+  width: 100%;
+  z-index: 10;
+}
+
+.card-content-reservation {
+  color: grey;
+
+
+}
+
+.reservation-card-description {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 5px;
+
+}
+
+.card-reservation-total-price {
+  margin-top: 15px;
+
+}
 .reservation-image {
   height: 200px;
   width: 200px;
