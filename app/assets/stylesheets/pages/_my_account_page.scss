@@ -1,33 +1,43 @@
 .user-row {
-    margin-bottom: 14px;
+  margin-bottom: 14px;
 }
-
 .user-row:last-child {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-
 .dropdown-user {
-    margin: 13px 0;
-    padding: 5px;
-    height: 100%;
+  margin: 13px 0;
+  padding: 5px;
+  height: 100%;
 }
-
 .dropdown-user:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-
 .table-user-information > tbody > tr {
-    border-top: 1px solid rgb(221, 221, 221);
+  border-top: 1px solid rgb(221, 221, 221);
 }
 
 .table-user-information > tbody > tr:first-child {
-    border-top: 0;
+  border-top: 0;
 }
-
-
 .table-user-information > tbody > tr > td {
-    border-top: 0;
+  border-top: 0;
 }
 .toppad {
-    margin-top: 20px;
+  margin-top: 20px;
 }
+.search-results-title {
+  text-align: center;
+  color: #444444;
+  font-size: 36px;
+}
+.panel-heading {
+  color: #444444;
+  background-color: #88C5CC;
+  border-color: #88C5CC;
+}
+// .panel-title {
+//   color: #444444;
+//   background-color: #88C5CC;
+//   border-color: #88C5CC;
+// }
+
