@@ -12,7 +12,7 @@
       </div>
       <div class="panel-body">
         <div class="row">
-          <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="https://avatars0.githubusercontent.com/u/26726874?v=3" class="img-circle img-responsive"> </div>
+          <div class="col-md-3 col-lg-3 " align="center"><%= image_tag current_user.avatar, class: "img-circle img-responsive" %></div>
 
 
           <div class=" col-md-9 col-lg-9 ">
@@ -39,7 +39,7 @@
               </tbody>
             </table>
             <a href=<%= new_scooter_path %> class="btn btn-primary">Add a scooter</a>
-            <a href="#" class="btn btn-primary">My Reservations</a>
+            <a href=<%= reservations_path %> class="btn btn-primary">My Reservations</a>
           </div>
         </div>
       </div>
