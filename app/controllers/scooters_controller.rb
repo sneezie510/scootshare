@@ -1,4 +1,5 @@
 class ScootersController < ApplicationController
+
   def index
     @scooters = Scooter.where.not(latitude: nil, longitude: nil)
     session[:date_data] = params if params[:start_date]
@@ -7,6 +8,10 @@ class ScootersController < ApplicationController
       marker.lng scooter.longitude
       marker.infowindow render_to_string(partial: "/shared/map_box", locals: { scooter: scooter })
     end
+  end
+
+  def new
+    @scooter = Scooter.new
   end
 
   def create
@@ -18,10 +23,6 @@ class ScootersController < ApplicationController
     else
       render :new
     end
-  end
-
-  def new
-    @scooter = Scooter.new
   end
 
   def show
@@ -49,10 +50,6 @@ class ScootersController < ApplicationController
   end
 
   private
-
-  # def set_user
-  #   @account = current_user
-  # end
 
   # def set_user
   #   @user = current_user
