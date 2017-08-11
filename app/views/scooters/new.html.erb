@@ -2,7 +2,8 @@
   <div class="login-box">
     <h2>Add a scooter</h2>
 
-    <%= simple_form_for(@scooter) do |f| %>
+    <%= simple_form_for @scooter do |f| %>
+    <%= f.error_notification %>
     <%= f.input :make %>
     <%= f.input :model %>
     <%= f.input :location %>
