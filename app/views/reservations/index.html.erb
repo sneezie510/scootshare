@@ -5,25 +5,25 @@
     <% @reservations.each do |reservation| %>
     <% renter = reservation.user %>
     <div class="col-xs-6">
-      <div class="reservation-card">
-        <div class="reservation-image" style="background-image: url('<%= reservation.scooter.picture %>')"></div>
-        <div class="reservation-card-content">
-          <div><h5><%= reservation.scooter.make %> <%= reservation.scooter.model %></h5></div>
-          <div><h6><i class="fa fa-globe" aria-hidden="true"></i> <%= reservation.scooter.location %></h6></div>
+
+      <div class="trips-reservation-card">
+        <div class="trips-reservation-image" style="background-image: url('<%= reservation.scooter.picture %>')"></div>
+        <div class="trips-reservation-card-content">
+          <div><h2><%= reservation.scooter.make %> <%= reservation.scooter.model %></h2></div>
+          <p><i class="fa fa-globe" aria-hidden="true"></i> <%= reservation.scooter.location %></p>
           <div><i class="fa fa-dollar" aria-hidden="true"></i> <%= reservation.scooter.price %>/day</div>
-          <div><h6>Reserved by: <%= renter.first_name.capitalize %> <%= renter.last_name.capitalize %></h6></div>
-          <div><h6>Rental start: <%= reservation.start_date %></h6></div>
-          <div><h6>Rental end: <%= reservation.end_date %></h6></div>
-          <div><h6>Total: € <%= reservation.total_price %></h6></div>
-          <div><h6>Status: <%= reservation.status %></h6></div>
+          <p>Reserved by: <%= renter.first_name.capitalize %> <%= renter.last_name.capitalize %></p>
+          <p>Rental duration: <%= reservation.start_date %> - <%= reservation.end_date %></p>
+          <p class="trips-reservation-price">Total: <i class="fa fa-dollar" aria-hidden="true"></i> <%= reservation.total_price %></p>
+
+          <p>Status: <%= reservation.status %></p>
           <div class="reservation-btn-container">
             <%= link_to "approve", approve_reservation_path(reservation), method: :patch, class: "btn btn-success" %>
             <%= link_to "deny", deny_reservation_path(reservation), method: :patch, class: "btn btn-danger" %>
           </div>
         </div>
+        <% end %>
       </div>
     </div>
-    <% end %>
   </div>
 </div>
-

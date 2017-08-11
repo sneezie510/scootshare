@@ -1,9 +1,19 @@
 
+.scooter-image-account-show {
+  height: 200px;
+  width: 100%;
+  border-radius: 7px;
+  background-size: cover !important;
+  background-position: center;
+}
+
 .scooter-image {
   height: 200px;
   width: 200px;
   background-size: cover !important;
   background-position: center;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
 }
 
 .scooter-card {
@@ -11,6 +21,20 @@
   margin: 10px;
   align-items: center;
   background-color: white;
+  border-radius: 7px;
+}
+
+.scooter-card-account-show {
+  margin: 10px auto;
+  background-color: white;
+  max-width: 400px;
+  font-size: 14px;
+  border-radius: 7px;
+  padding: 10px 5px;
+  h2{
+    font-size: 18px;
+    margin-top: 0px;
+    }
 }
 
 .scooter-card-content {
@@ -41,3 +65,4 @@
     cursor: pointer;
   }
 }
+

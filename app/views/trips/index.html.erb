@@ -4,18 +4,21 @@
   <div class="row">
     <% @trips.each do |trip| %>
     <% owner = trip.scooter.user %>
-    <div class="col-xs-6">
-      <div class="reservation-card">
-        <div class="reservation-image" style="background-image: url('<%= trip.scooter.picture %>')"></div>
-        <div class="reservation-card-content">
-          <div><h5><%= trip.scooter.make %> <%= trip.scooter.model %></h5></div>
-          <div><h6><i class="fa fa-globe" aria-hidden="true"></i> <%= trip.scooter.location %></h6></div>
-          <div><i class="fa fa-dollar" aria-hidden="true"></i> <%= trip.scooter.price %>/day</div>
-          <div><h6>Owned by: <%= owner.first_name.capitalize %> <%= owner.last_name.capitalize %></h6></div>
-          <div><h6>Trip start: <%= trip.start_date %></h6></div>
-          <div><h6>Trip end: <%= trip.end_date %></h6></div>
-          <div><h6>Total: € <%= trip.total_price %></h6></div>
-          <div><h6>Status: <%= trip.status %></h6></div>
+    <div class="col-xs-12 col-sm-6">
+      <div class="trips-reservation-card">
+        <div class="trips-reservation-image" style="background-image: url('<%= trip.scooter.picture %>')"></div>
+
+
+
+        <div class="trips-reservation-card-content">
+          <div><h2><%= trip.scooter.make %> <%= trip.scooter.model %></h2></div>
+          <p><i class="fa fa-globe" aria-hidden="true"></i> <%= trip.scooter.location %></p>
+          <div class="trips-reservation-price"><i class="fa fa-dollar" aria-hidden="true"></i> <%= trip.scooter.price %>/day</div>
+          <p>Owned by: <%= owner.first_name.capitalize %> <%= owner.last_name.capitalize %></p>
+          <p>Trip duration: <%= trip.start_date %> - <%= trip.end_date %></p>
+          <p class="trips-reservation-price">Total: <i class="fa fa-dollar" aria-hidden="true"></i> <%= trip.total_price %></p>
+          <p>
+          Status: <%= trip.status %></p>
           <div class="reservation-btn-container">
             <%= link_to "cancel", cancel_trip_path(trip), method: :patch, class: "btn btn-warning" %>
           </div>
