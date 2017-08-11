@@ -18,9 +18,10 @@
   background-image: url('pexels-photo-phone.jpeg');
   background-position: center;
   background-size: cover;
+  padding: 1px;
 }
 .billboard {
-  height: 260px;
+  height: 300px;
   margin-bottom: 20px;
 }
 .billboard-wrapper {
@@ -42,7 +43,8 @@
   padding: 10px;
 }
 .title-tour {
-  font-weight: 300;
+  font-weight: inherit;
+  font-size: 36px;
   color: white;
   margin-bottom: 15px;
   padding-top: 20px;
