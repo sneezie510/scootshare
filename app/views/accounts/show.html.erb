@@ -61,7 +61,7 @@
     <% @scooters.each do |s| %>
     <div class="col-xs-6">
       <div class="scooter-card">
-        <div class="scooter-image" style="background-image: url('<%= cl_image_path s.photo %>')"></div>
+        <div class="scooter-image" style="background-image: url('<%= cl_image_path s.picture %>')"></div>
         <div class="scooter-card-content">
           <div><h4><%= s.make %> <%= s.model %></h4></div>
           <div><h5><i class="fa fa-globe" aria-hidden="true"></i> <%= s.location %></h5></div>
