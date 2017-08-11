@@ -30,9 +30,16 @@ class ScootersController < ApplicationController
     if data = session[:date_data]
       @start_date = Date.parse(data["start_date"])
       @end_date = Date.parse(data["end_date"])
-      @total_price = ((@end_date - @start_date).to_i + 1) * @scooter.price
+    else
+      @start_date = Date.today
+      @end_date = Date.today
     end
+    @total_price = ((@end_date - @start_date).to_i + 1) * @scooter.price
     @reservation = Reservation.new
+    @hash = Gmaps4rails.build_markers(@scooter) do |scooter, marker|
+      marker.lat scooter.latitude
+      marker.lng scooter.longitude
+    end
   end
 
   def edit
