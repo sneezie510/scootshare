@@ -1,0 +1,26 @@
+.trips-reservation-card {
+  margin: 10px auto;
+  background-color: white;
+  max-width: 400px;
+  font-size: 14px;
+  h2{
+    font-size: 18px;
+    margin-top: 0px;
+
+    }
+}
+.trips-reservation-price {
+  font-size: 16px;
+
+}
+
+.trips-reservation-image {
+  height: 200px;
+  width: 100%;
+  background-size: cover !important;
+  background-position: center;
+}
+
+.trips-reservation-card-content{
+  padding: 15px;
+}
